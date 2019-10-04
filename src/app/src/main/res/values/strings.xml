@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Remote Car Control</string>
+    <string name="okey">أوكي</string>
+    <string name="matjar">متجر</string>
+    <string name="creditTitle"><![CDATA[Developed & designed by]]></string>
+    <string name="creditName">Yuniss.com</string>
+    <string name="txtlogin">تسجيل الدخول</string>
+    <string name="website">www.ok4shop.com</string>
+    <string name="phone">00967770001295</string>
+    <string name="txt_register">حساب جديد</string>
+</resources>

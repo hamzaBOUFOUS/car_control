@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0D8ED0</color>
+    <color name="colorPrimaryDark">#1D6E9B</color>
+    <color name="colorAccent">#444</color>
+    <color name="secondary">#CD1022</color>
+    <color name="success">#90C418</color>
+    <color name="warning">#FFEB3B</color>
+    <color name="danger">#ED4E59</color>
+    <color name="smothWite">#dadada</color>
+    <color name="white">#fff</color>
+</resources>
