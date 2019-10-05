@@ -3,9 +3,9 @@ package com.yuniss.remotecarcontrol.helpers;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.util.TypedValue;
+import android.widget.Toast;
+
 
 public final class Methods {
 
@@ -15,5 +15,13 @@ public final class Methods {
         ctx.startActivity(intent);
     }
 
+
+    public static int dipToPixels(int dp,Context context){
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dp, context.getResources().getDisplayMetrics());
+    }
+
+    public static void myToast(String message, Context context){
+        Toast.makeText(context,message,Toast.LENGTH_LONG).show();
+    }
 
 }

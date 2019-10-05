@@ -7,14 +7,22 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "users")
 public class User {
 
-    @PrimaryKey
-    public int uid;
+    @PrimaryKey(autoGenerate = true)
+    private int uid;
 
     @ColumnInfo(name = "phone")
-    public String phone;
+    private String phone;
 
     @ColumnInfo(name = "password")
-    public String password;
+    private String password;
+
+    public User() {
+    }
+
+    public User(String phone, String password) {
+        this.phone = phone;
+        this.password = password;
+    }
 
     public User(int uid, String phone, String password) {
         this.uid = uid;

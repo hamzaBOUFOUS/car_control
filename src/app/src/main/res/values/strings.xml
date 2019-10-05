@@ -8,4 +8,7 @@
     <string name="website">www.ok4shop.com</string>
     <string name="phone">00967770001295</string>
     <string name="txt_register">حساب جديد</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="password">كلمة السر</string>
+    <string name="confirm_password">أعد كتابة كلمة السر</string>
 </resources>
