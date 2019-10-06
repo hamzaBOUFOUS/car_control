@@ -20,6 +20,7 @@ public class SessionsManager {
     private static final String PREF_NAME = "ControlCarAppLogin";
 
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
+    private static final String KEY_USER_ID = "user_id";
 
 
     public SessionsManager(Context context) {
@@ -38,11 +39,33 @@ public class SessionsManager {
         Log.d(TAG, "User login session modified!");
     }
 
-    public boolean isLoggedIn(){
+
+    public void setUserId(int userId) {
+
+        editor.putInt(KEY_USER_ID, userId);
+
+        // commit changes
+        editor.commit();
+
+        Log.d(TAG, "User added to session!");
+    }
+
+    public int getUserId() {
+        return pref.getInt(KEY_USER_ID, 0);
+    }
+
+    public boolean userexist() {
+        return pref.contains(KEY_USER_ID);
+    }
+
+
+    public boolean isLoggedIn() {
         return pref.getBoolean(KEY_IS_LOGGEDIN, false);
     }
 
-    public void drop(){
+    public void drop() {
         editor.clear();
     }
+
+
 }

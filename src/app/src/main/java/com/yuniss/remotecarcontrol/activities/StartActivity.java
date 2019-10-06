@@ -1,8 +1,6 @@
 package com.yuniss.remotecarcontrol.activities;
 
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -22,7 +20,7 @@ import com.yuniss.remotecarcontrol.helpers.Constants;
 import com.yuniss.remotecarcontrol.helpers.Methods;
 import com.yuniss.remotecarcontrol.local.SessionsManager;
 import com.yuniss.remotecarcontrol.model.User;
-import com.yuniss.remotecarcontrol.model.UserDataSource;
+import com.yuniss.remotecarcontrol.model.UserDS;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -31,7 +29,7 @@ public class StartActivity extends AppCompatActivity {
     private RelativeLayout sign_buttons;
 
     // Database
-    UserDataSource userDataSource;
+    UserDS userDS;
 
     // EditTExts
     private EditText phone_number_txt, password_txt, phone_number_txt_reg, password_txt_reg, confirm_password_txt;
@@ -71,7 +69,7 @@ public class StartActivity extends AppCompatActivity {
         confirm_password_txt = findViewById(R.id.confirm_password_txt);
 
         // Initial Databse
-        userDataSource = new UserDataSource(this);
+        userDS = new UserDS(this);
 
         // Initial Buttons
         btn_login = findViewById(R.id.btn_login);
@@ -117,12 +115,18 @@ public class StartActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                slideUpLogo();
-                slideUpSignButtons();
+                SessionsManager sessionsManager = new SessionsManager(StartActivity.this);
+                if (sessionsManager.isLoggedIn() && sessionsManager.userexist()){
+                    startActivity(new Intent(StartActivity.this, DashboardActivity.class));
+                    finish();
+                }else {
+                    slideUpLogo();
+                    slideUpSignButtons();
+                }
 
 
             }
-        }, 1800);
+        }, 2000);
     }
 
     private void performRegister() {
@@ -144,7 +148,7 @@ public class StartActivity extends AppCompatActivity {
             showAlert(Constants.DANGER,"كلمات المرور غير متطابقة");
         } else {
             // Every things okay
-            userDataSource.addUser(new User(phoneNumber, password));
+            userDS.addUser(new User(phoneNumber, password));
             Methods.myToast("success", this);
             startLogin();
             showAlert(Constants.SUCCESS,"تم إنشاء حسابك بنجاح");
@@ -172,20 +176,21 @@ public class StartActivity extends AppCompatActivity {
         } else if (phoneNumber.length() != Constants.PHONE_NUMBER_LENGTH) {
             // Display Error Length Phone number
             showAlert(Constants.DANGER,"يرجى إدخال رقم هاتف صالح");
-        } else if (password.length() <= 6) {
+        } else if (password.length() < 6) {
             // Display Error Length Password
             showAlert(Constants.DANGER,"كلمة المرور غير صحيحة");
         } else {
             // Start Verify Login
             User user = new User(phoneNumber, password);
-            if (userDataSource.findByPhone(user.getPhone()) == null) {
+            if (userDS.findByPhone(user.getPhone()) == null) {
                 showAlert(Constants.DANGER,"لم يتم العثور على اي المستخدم");
             } else {
-                if (!userDataSource.findByPhone(user.getPhone()).getPassword().equals(user.getPassword())) {
+                if (!userDS.findByPhone(user.getPhone()).getPassword().equals(user.getPassword())) {
                     showAlert(Constants.DANGER,"كلمة المرور غير صحيحة");
                 } else {
                     SessionsManager sessionsManager = new SessionsManager(this);
                     sessionsManager.setLogin(true);
+                    sessionsManager.setUserId(userDS.findByPhone(user.getPhone()).getUid());
                     startActivity(new Intent(StartActivity.this,DashboardActivity.class));
                     finish();
                 }

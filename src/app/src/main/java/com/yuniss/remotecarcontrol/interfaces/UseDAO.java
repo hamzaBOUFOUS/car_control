@@ -11,7 +11,7 @@ import com.yuniss.remotecarcontrol.model.User;
 import java.util.List;
 
 @Dao
-public interface DataAccessObj {
+public interface UseDAO {
 
 
     @Insert

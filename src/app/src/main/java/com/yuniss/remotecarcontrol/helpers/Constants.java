@@ -11,4 +11,9 @@ public final class Constants {
     public static final int SUCCESS = 1;
     public static final int DANGER = -1;
     public static final int WARNING = 0;
+    public static final int PASSWORD_LENGTH = 6;
+
+
+    // CMDs of car control
+    public static final String BEGIN_CODE = "begin";
 }

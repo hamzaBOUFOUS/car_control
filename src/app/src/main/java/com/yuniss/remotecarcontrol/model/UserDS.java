@@ -1,25 +1,23 @@
 package com.yuniss.remotecarcontrol.model;
 
 import android.content.Context;
-import android.widget.Toast;
 
 import androidx.room.Room;
 
-import com.yuniss.remotecarcontrol.MainActivity;
 import com.yuniss.remotecarcontrol.database.DataBase;
-import com.yuniss.remotecarcontrol.interfaces.DataAccessObj;
+import com.yuniss.remotecarcontrol.interfaces.UseDAO;
 
 import java.util.List;
 
 import static com.yuniss.remotecarcontrol.helpers.Constants.DATABASE_NAME;
 
-public class UserDataSource implements DataAccessObj {
+public class UserDS implements UseDAO {
 
 
     public static DataBase dataBase;
     public Context context;
 
-    public UserDataSource(Context context) {
+    public UserDS(Context context) {
         this.context = context;
         dataBase = Room.databaseBuilder(context,DataBase.class,DATABASE_NAME).allowMainThreadQueries().build();
     }

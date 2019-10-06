@@ -2,6 +2,7 @@ package com.yuniss.remotecarcontrol.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "users")
@@ -16,14 +17,17 @@ public class User {
     @ColumnInfo(name = "password")
     private String password;
 
+
     public User() {
     }
 
+    @Ignore
     public User(String phone, String password) {
         this.phone = phone;
         this.password = password;
     }
 
+    @Ignore
     public User(int uid, String phone, String password) {
         this.uid = uid;
         this.phone = phone;

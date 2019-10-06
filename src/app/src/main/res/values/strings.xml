@@ -11,4 +11,10 @@
     <string name="phone_number">رقم الهاتف</string>
     <string name="password">كلمة السر</string>
     <string name="confirm_password">أعد كتابة كلمة السر</string>
+    <string name="home_page">الصفحة الرئيسة</string>
+    <string name="cars">السيارات</string>
+    <string name="add_new_car">أضف سيارة جديدة</string>
+    <string name="car_name">الاسم</string>
+    <string name="car_phone">رقم السيارة</string>
+    <string name="add">أضف</string>
 </resources>

@@ -3,12 +3,15 @@ package com.yuniss.remotecarcontrol.database;
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
-import com.yuniss.remotecarcontrol.interfaces.DataAccessObj;
+import com.yuniss.remotecarcontrol.interfaces.CarDAO;
+import com.yuniss.remotecarcontrol.interfaces.UseDAO;
+import com.yuniss.remotecarcontrol.model.Car;
 import com.yuniss.remotecarcontrol.model.User;
 
 
-@Database(entities = {User.class},version = 1)
+@Database(entities = {User.class, Car.class},version = 1)
 public abstract class DataBase extends RoomDatabase {
 
-    public abstract DataAccessObj dataAccessObj();
+    public abstract UseDAO dataAccessObj();
+    public abstract CarDAO getCarDAO();
 }
