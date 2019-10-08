@@ -17,4 +17,20 @@
     <string name="car_name">الاسم</string>
     <string name="car_phone">رقم السيارة</string>
     <string name="add">أضف</string>
+    <string name="save">حفظ</string>
+    <string name="change_password">تغيير كلمة السر</string>
+    <string name="manageAdmins">ادارة المستخدمين</string>
+    <string name="car_tracking">تعقب السيارة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="speed">السرعة</string>
+    <string name="system_positions">وضعيات الجهاز</string>
+    <string name="cancelSpeed">الغاء تحديد السرعة</string>
+    <string name="manageSpeed">تحديد السرعة</string>
+    <string name="tracking_pos">وضعيه التعقب</string>
+    <string name="note_car_position">بعد ارسال الامر يجب عليك الاتصال على الجهاز لتحديد الموقع او سماع مايدور داخل سيارتك</string>
+    <string name="listening_pos">وضعية التنصت</string>
+    <string name="emergency">حالة الطوارئ</string>
+    <string name="start_car">تشغيل السيارة</string>
+    <string name="shutdown_car">ايقاف السيارة</string>
+    <string name="note_car_emergency">عند تفعيل الامر الجهاز يرسل انذار الى المدراء عند فتح باب السياره او تشغيل السيارة</string>
 </resources>

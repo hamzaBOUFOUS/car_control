@@ -16,4 +16,13 @@ public final class Constants {
 
     // CMDs of car control
     public static final String BEGIN_CODE = "begin";
+    public static final String CHANGE_PASSWORD_CODE = "password";
+    public static final String ADD_NUMBER_CODE = "admin";
+    public static final String DELETE_NUMBER_CODE = "noadmin";
+    public static final String MK_ADMIN_NUMBER_CODE = "centernum";
+    public static final String STOP_CAR_CODE = "stop";
+    public static final String START_CAR_CODE = "resume";
+    public static final String START_EMERGENCY = "arm";
+    public static final String STOP_EMERGENCY = "disarm";
+
 }

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/background_pop_up"
+        app:cardCornerRadius="25dp">
+
+        <LinearLayout
+            android:id="@+id/layout_error_alert"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txt_error_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtlogin"
+                android:textColor="@color/danger"
+                android:fontFamily="@font/helve_bold"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/helve_regular"
+                android:text="@string/add_new_car"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp" />
+
+
+            <EditText
+                android:id="@+id/car_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/background_txtbox"
+                android:fontFamily="@font/helve_regular"
+                android:hint="@string/car_name"
+                android:paddingRight="20dp"
+                android:singleLine="true"
+                android:textColorHint="@color/colorAccent"
+                android:textDirection="rtl" />
+
+            <EditText
+                android:id="@+id/car_phone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:singleLine="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/background_txtbox"
+                android:fontFamily="@font/helve_regular"
+                android:hint="@string/car_phone"
+                android:paddingRight="20dp"
+                android:textColorHint="@color/colorAccent"
+                android:textDirection="rtl" />
+
+            <EditText
+                android:id="@+id/car_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:singleLine="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/background_txtbox"
+                android:fontFamily="@font/helve_regular"
+                android:hint="@string/password"
+                android:paddingRight="20dp"
+                android:textColorHint="@color/colorAccent"
+                android:textDirection="rtl" />
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/btn_background_primary_dark"
+                android:fontFamily="@font/helve_bold"
+                android:text="@string/add"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textDirection="anyRtl"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

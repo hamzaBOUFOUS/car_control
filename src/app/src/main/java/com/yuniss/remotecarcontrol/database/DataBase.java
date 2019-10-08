@@ -9,7 +9,7 @@ import com.yuniss.remotecarcontrol.model.Car;
 import com.yuniss.remotecarcontrol.model.User;
 
 
-@Database(entities = {User.class, Car.class},version = 1)
+@Database(entities = {User.class, Car.class},version = 1, exportSchema = false)
 public abstract class DataBase extends RoomDatabase {
 
     public abstract UseDAO dataAccessObj();
